@@ -1,0 +1,39 @@
+3. Sistema de Pagamentos Seguros com Crip-
+tografia Ponta a Ponta
+
+Contexto: Em lojas online e marketplaces, proteger as informa ̧c ̃oes financeiras
+dos clientes, como dados de cart ̃ao de cr ́edito,  ́e fundamental para evitar fraudes.
+E necess ́ario garantir que essas informa ̧c ̃oes sejam criptografadas durante todo  ́
+o processo de pagamento e que a integridade das transa ̧c ̃oes seja verificada.
+
+Descri ̧c ̃ao do Projeto: Este sistema de pagamentos criptografa as in-
+forma ̧c ̃oes financeiras dos clientes usando Fernet antes de envi ́a-las ao banco
+
+de dados MongoDB Atlas. Um hash SHA-256  ́e gerado para cada transa ̧c ̃ao,
+garantindo que qualquer altera ̧c ̃ao ou adultera ̧c ̃ao possa ser detectada.
+
+Principais Funcionalidades: - **Processamento de Pagamento**: O sis-
+tema recebe as informa ̧c ̃oes de pagamento do cliente (n ́umero do cart ̃ao, CVV,
+
+validade) e as criptografa antes de armazenar. - **Verifica ̧c ̃ao de Integridade**:
+
+2
+
+Cada transa ̧c ̃ao gera um hash SHA-256 que pode ser usado para garantir que os
+dados n ̃ao foram modificados durante o processo. - **Tokens Tempor ́arios**:
+
+Para maior seguran ̧ca, o sistema gera tokens tempor ́arios para transa ̧c ̃oes, evi-
+tando o armazenamento direto de informa ̧c ̃oes sens ́ıveis. - **Hist ́orico de Transa ̧c ̃oes**:
+
+Clientes podem visualizar um hist ́orico de transa ̧c ̃oes criptografadas que s ̃ao de-
+scriptografadas apenas sob demanda.
+
+Seguran ̧ca: - **Criptografia de Dados Sens ́ıveis**: As informa ̧c ̃oes do
+cart ̃ao s ̃ao criptografadas com Fernet antes de serem processadas ou armazenadas,
+impedindo que dados sejam acessados por terceiros. - **Hash das Transa ̧c ̃oes**:
+
+Um hash SHA-256  ́e criado para cada transa ̧c ̃ao, permitindo verificar a integri-
+dade dos dados. - **Autentica ̧c ̃ao de Dois Fatores**: Implementa-se um sistema
+
+de autentica ̧c ̃ao robusta para garantir que apenas o cliente possa realizar paga-
+mentos.
